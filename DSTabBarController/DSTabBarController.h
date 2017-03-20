@@ -76,7 +76,6 @@ NS_INLINE void ds_exception(NSString *reason)
 
 @property (nonatomic, assign) CGFloat tabBarHeight;
 
-@property (nonatomic, assign) NSUInteger defaultSelectIndex;  //Default is 0
 
 @property (nonatomic, assign) CFTimeInterval minimumPressDuration;// Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
 
