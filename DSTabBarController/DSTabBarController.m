@@ -9,7 +9,6 @@
 #import "DSTabBarController.h"
 #import "DSTabBar.h"
 
-#define NSParameterAssert(condition) NSAssert((condition), @"Invalid parameter not satisfying: %@", @#condition)
 
 @interface DSTabBarController ()  <DSTabBarDelegate,UITabBarControllerDelegate>
 
@@ -173,10 +172,8 @@
 
 - (void)setPublishButtonInfo
 {
-    
     if(!self.publishButton) return;
     [self.ds_tabBar setPublishButton:self.publishButton index:self.publishBtnIndex viewController:self.publishViewController];
-  
 }
 
 
