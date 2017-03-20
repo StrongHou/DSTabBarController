@@ -48,6 +48,13 @@
     [self setUpTabBar];
 }
 
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
+    [self.tabBar layoutSubviews];
+
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DSFirstTableViewController.h
 //  DSTabBarControllerDemo
 //
 //  Created by houxq on 17/3/20.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DSFirstTableViewController : UITableViewController
 
 @end
-

@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		1C0E8C9F1E7F7448006D41F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0E8C9E1E7F7448006D41F5 /* main.m */; };
 		1C0E8CA21E7F7448006D41F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0E8CA11E7F7448006D41F5 /* AppDelegate.m */; };
-		1C0E8CA51E7F7448006D41F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0E8CA41E7F7448006D41F5 /* ViewController.m */; };
 		1C0E8CA81E7F7448006D41F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0E8CA61E7F7448006D41F5 /* Main.storyboard */; };
 		1C0E8CAA1E7F7448006D41F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0E8CA91E7F7448006D41F5 /* Assets.xcassets */; };
 		1C0E8CAD1E7F7448006D41F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0E8CAB1E7F7448006D41F5 /* LaunchScreen.storyboard */; };
 		1C0E8CB91E7F74D1006D41F5 /* DSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0E8CB61E7F74D1006D41F5 /* DSTabBar.m */; };
 		1C0E8CBA1E7F74D1006D41F5 /* DSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C0E8CB81E7F74D1006D41F5 /* DSTabBarController.m */; };
+		1CF00DED1E7FB8B800FF35E0 /* DSFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF00DEC1E7FB8B800FF35E0 /* DSFirstTableViewController.m */; };
+		1CF00DF31E7FC3DB00FF35E0 /* DSSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF00DF21E7FC3DB00FF35E0 /* DSSecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +23,6 @@
 		1C0E8C9E1E7F7448006D41F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1C0E8CA01E7F7448006D41F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1C0E8CA11E7F7448006D41F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1C0E8CA31E7F7448006D41F5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1C0E8CA41E7F7448006D41F5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1C0E8CA71E7F7448006D41F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C0E8CA91E7F7448006D41F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0E8CAC1E7F7448006D41F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +31,10 @@
 		1C0E8CB61E7F74D1006D41F5 /* DSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTabBar.m; sourceTree = "<group>"; };
 		1C0E8CB71E7F74D1006D41F5 /* DSTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTabBarController.h; sourceTree = "<group>"; };
 		1C0E8CB81E7F74D1006D41F5 /* DSTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTabBarController.m; sourceTree = "<group>"; };
+		1CF00DEB1E7FB8B800FF35E0 /* DSFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSFirstTableViewController.h; sourceTree = "<group>"; };
+		1CF00DEC1E7FB8B800FF35E0 /* DSFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSFirstTableViewController.m; sourceTree = "<group>"; };
+		1CF00DF11E7FC3DB00FF35E0 /* DSSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSecondViewController.h; sourceTree = "<group>"; };
+		1CF00DF21E7FC3DB00FF35E0 /* DSSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +69,10 @@
 			children = (
 				1C0E8CA01E7F7448006D41F5 /* AppDelegate.h */,
 				1C0E8CA11E7F7448006D41F5 /* AppDelegate.m */,
-				1C0E8CA31E7F7448006D41F5 /* ViewController.h */,
-				1C0E8CA41E7F7448006D41F5 /* ViewController.m */,
+				1CF00DEB1E7FB8B800FF35E0 /* DSFirstTableViewController.h */,
+				1CF00DEC1E7FB8B800FF35E0 /* DSFirstTableViewController.m */,
+				1CF00DF11E7FC3DB00FF35E0 /* DSSecondViewController.h */,
+				1CF00DF21E7FC3DB00FF35E0 /* DSSecondViewController.m */,
 				1C0E8CB41E7F74D1006D41F5 /* DSTabBarController */,
 				1C0E8CA61E7F7448006D41F5 /* Main.storyboard */,
 				1C0E8CA91E7F7448006D41F5 /* Assets.xcassets */,
@@ -170,7 +175,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0E8CB91E7F74D1006D41F5 /* DSTabBar.m in Sources */,
-				1C0E8CA51E7F7448006D41F5 /* ViewController.m in Sources */,
+				1CF00DF31E7FC3DB00FF35E0 /* DSSecondViewController.m in Sources */,
+				1CF00DED1E7FB8B800FF35E0 /* DSFirstTableViewController.m in Sources */,
 				1C0E8CA21E7F7448006D41F5 /* AppDelegate.m in Sources */,
 				1C0E8CBA1E7F74D1006D41F5 /* DSTabBarController.m in Sources */,
 				1C0E8C9F1E7F7448006D41F5 /* main.m in Sources */,
@@ -330,6 +336,7 @@
 				1C0E8CB31E7F7448006D41F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

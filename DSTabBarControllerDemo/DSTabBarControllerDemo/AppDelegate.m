@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DSTabBarController.h"
+#import "DSFirstTableViewController.h"
+#import "DSSecondViewController.h"
 
 
 @interface AppDelegate () <DSTabBarControllerDelegate,DSTabBarControllerDataSource>
@@ -53,8 +55,12 @@
 
 - (NSArray *)viewControllers
 {
-
-    return @[@"ViewController",@"ViewController"];
+    
+    
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:[[DSFirstTableViewController alloc] initWithStyle:UITableViewStylePlain] ];
+    
+    
+    return @[nav1,@"DSSecondViewController"];
 }
 
 - (NSArray *)tabBarItems
@@ -129,14 +135,14 @@
 {
 
     
-    [UIView animateWithDuration:0.5 animations:^{
-        viewController.view.layer.transform = CATransform3DMakeScale(0.9, 0.9, 0.9);
+    [UIView animateWithDuration:0.25 animations:^{
+        viewController.view.layer.transform = CATransform3DMakeScale(0.95, 0.95, 0.7);
     }];
     
     UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.25 animations:^{
             viewController.view.layer.transform = CATransform3DIdentity;
         }];
         

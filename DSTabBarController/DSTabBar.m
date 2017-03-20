@@ -44,7 +44,9 @@
 {
     
     self.ds_items = self.items;
-    self.tabBarButtonArray = [self tabBarButtonArrayWithArray:self.subviews];
+    
+    NSArray *sortArray = [self sortedSubviewWithSuperView:self];
+    self.tabBarButtonArray = [self tabBarButtonArrayWithArray:sortArray];
     NSUInteger tabBarButtonCount = self.tabBarButtonArray.count;
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
@@ -68,10 +70,12 @@
         if(self.publishBtn ){
             offset = idx >= self.index?publishBtnW:0;
             obj.frame = CGRectMake(tabBarBtnX+tabBarBtnW*idx+offset, tabBarBtnY, tabBarBtnW, tabBarBTnH);
-        }
+            
+                   }
         
     }];
     self.publishBtn.frame = CGRectMake(tabBarBtnX+self.index*tabBarBtnW, height -publishBtnH, publishBtnW, publishBtnH);
+
 }
 
 
@@ -259,6 +263,16 @@
     return self.ds_items[index];
 
 }
+
+- (NSArray *)sortedSubviewWithSuperView:(UIView *)superView {
+    NSArray *sortedSubviews = [superView.subviews sortedArrayUsingComparator:^NSComparisonResult(UIView * formerView, UIView * latterView) {
+        CGFloat formerViewX = formerView.frame.origin.x;
+        CGFloat latterViewX = latterView.frame.origin.x;
+        return  (formerViewX > latterViewX) ? NSOrderedDescending : NSOrderedAscending;
+    }];
+    return sortedSubviews;
+}
+
 @end
 
 
