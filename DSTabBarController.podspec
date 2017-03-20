@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'DSTabBarController'
-s.version      = '1.0.0'
+s.version      = '1.0.1'
 s.summary      = 'a tabBarController Components.Support an easy-to-use'
 s.homepage     = 'https://github.com/StrongHou/DSTabBarController'
 s.license      = 'MIT'
