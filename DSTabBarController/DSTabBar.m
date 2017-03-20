@@ -8,7 +8,7 @@
 
 #import "DSTabBar.h"
 
-@interface DSTabBar ()
+@interface DSTabBar () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, copy) NSArray *tabBarButtonArray;
 @property (nonatomic, copy) NSArray *ds_items;
@@ -62,16 +62,15 @@
     
     __block CGFloat offset = 0;
 
-    [self.tabBarButtonArray enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.tabBarButtonArray enumerateObjectsUsingBlock:^(UIControl * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        //long press event
-        [self setLongPressEventWithView:(UIView *)obj];
+//        long press event
+        [self setTabBarButtonLongPressEvent:obj];
         //set subViews Frame
         if(self.publishBtn ){
             offset = idx >= self.index?publishBtnW:0;
             obj.frame = CGRectMake(tabBarBtnX+tabBarBtnW*idx+offset, tabBarBtnY, tabBarBtnW, tabBarBTnH);
-            
-                   }
+            }
         
     }];
     self.publishBtn.frame = CGRectMake(tabBarBtnX+self.index*tabBarBtnW, height -publishBtnH, publishBtnW, publishBtnH);
@@ -79,12 +78,20 @@
 }
 
 
-- (void)setLongPressEventWithView:(UIView *)view
-{
+- (void)setTabBarButtonLongPressEvent:(UIControl *)view
+{   
+    
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tabBarButtonLongPress:)];
     longPress.minimumPressDuration = self.minimumPressDuration;
+    longPress.delegate = self;
     [view addGestureRecognizer:longPress];
     
+    
+}
+
+- (void)offsetButtonTouchEnd:(UIControl *)control
+{
+
     
 }
 
@@ -182,7 +189,7 @@
     
     [allTargets enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         [publishBtn removeTarget:obj action:NULL forControlEvents:UIControlEventTouchUpInside];
-        [publishBtn removeTarget:obj action:NULL forControlEvents:UIControlEventTouchDown];
+       
     }];
     
     publishBtn.adjustsImageWhenHighlighted = NO;
@@ -272,6 +279,9 @@
     }];
     return sortedSubviews;
 }
+
+
+
 
 @end
 

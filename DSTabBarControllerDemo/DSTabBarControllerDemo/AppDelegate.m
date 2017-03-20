@@ -33,7 +33,7 @@
 
 
 
-// demo1
+
 - (UIViewController *)rootViewController1
 {
     
@@ -88,17 +88,15 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [button setImage:[UIImage imageNamed:@"yuanfenqi"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"yuanfenqi_h"] forState:UIControlStateSelected];
+//    [button setImage:[UIImage imageNamed:@"yuanfenqi_h"] forState:UIControlStateSelected];
     
-    button.backgroundColor =[UIColor greenColor];
+    button.backgroundColor =[UIColor cyanColor];
     
     button.frame = CGRectMake(0, 0, 100, 100);
     
     button.showsTouchWhenHighlighted = YES;
     
     return button;
-    
-
 }
 
 
@@ -113,22 +111,12 @@
 }
 
 
-- (BOOL)tabBarController:(DSTabBarController *)tabBarController shouldLongPressTabBarButton:(UIControl *)tabBarButton viewController:(UIViewController *)viewController
-{
-    
-    if(tabBarController.selectedIndex == 0){
-        return YES;
-    }
-    
-    return NO;
-}
 
 // You can get the tabBarButton which you clicked
 - (void)tabBarController:(DSTabBarController *)tabBarController didClickTabBarButton:(UIControl *)tabBarButton viewController:(UIViewController *)viewController
 {
     [self addZoonAnimationWithView:tabBarButton];
-    
-    NSLog(@"%@被点击了",tabBarButton);
+
 }
 
 - (void)tabBarController:(DSTabBarController *)tabBarController didLongPressUITabBarButton:(UIControl *)tabBarButton viewController:(UIViewController *)viewController
@@ -160,6 +148,8 @@
 
 }
 
+
+
 //
 - (UIButton *)tabBarControllerPublishButton:(DSTabBarController *)tabBarController
 {
@@ -168,10 +158,46 @@
 }
 
 
+- (BOOL)tabBarController:(DSTabBarController *)tabBarController shouldLongPressPublishButton:(UIButton *)button
+{
+    return YES;
+}
+
+- (BOOL)tabBarController:(DSTabBarController *)tabBarController shouldLongPressTabBarButton:(UIControl *)tabBarButton viewController:(UIViewController *)viewController
+{
+    return YES;
+}
+
+
+- (void)tabBarController:(DSTabBarController *)tabBarController didLongPressPublishButton:(UIButton *)button
+{
+    
+    UIViewController *viewController = tabBarController.publishViewController;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        viewController.view.layer.transform = CATransform3DMakeScale(0.95, 0.95, 0.7);
+    }];
+    
+    UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [UIView animateWithDuration:0.25 animations:^{
+            viewController.view.layer.transform = CATransform3DIdentity;
+        }];
+        
+    }];
+    
+    [alerController addAction:action];
+    
+    [viewController presentViewController:alerController animated:YES completion:nil];
+
+}
+
 - (UIViewController *)tabBarControllerSelectPublishButtonViewController:(DSTabBarController *)tabBarController
 {
 
-   UIViewController *vc= [[UIViewController alloc] init];
+    UIViewController *vc= [[UIViewController alloc] init];
+    vc.title  = @"Text";
     vc.view.backgroundColor = [UIColor yellowColor];
     
     return [[UINavigationController alloc] initWithRootViewController:vc];

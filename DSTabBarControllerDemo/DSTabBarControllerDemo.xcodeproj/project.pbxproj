@@ -134,6 +134,7 @@
 				TargetAttributes = {
 					1C0E8C991E7F7448006D41F5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6VU5359QS9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -297,6 +298,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6VU5359QS9;
 				INFOPLIST_FILE = DSTabBarControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -309,6 +312,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6VU5359QS9;
 				INFOPLIST_FILE = DSTabBarControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

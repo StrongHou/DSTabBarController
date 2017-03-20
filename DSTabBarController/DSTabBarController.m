@@ -60,6 +60,7 @@
     [super viewWillAppear:animated];
     [self setChildControllerWithViewControlles:self.ds_viewControllers];
     [self setPublishButtonInfo];
+   
 
 }
 #pragma makr - publish method
@@ -116,8 +117,7 @@
         
         ds_exception([NSString stringWithFormat:@"请检查您传入的控制器数组参数 :`%@`",object]);
     }
-   
-
+  
     return viewController;
 }
 
@@ -172,7 +172,7 @@
     //KVC
     [self setValue:[[DSTabBar alloc] init] forKey:NSStringFromSelector(@selector(tabBar))];
     self.ds_tabBar.ds_delegate = self;
-    self.minimumPressDuration = 0.5;
+    self.minimumPressDuration = 1.2;
     self.delegate = self;
 }
 
@@ -253,6 +253,18 @@
 
 #pragma mark -  <UITabBarControllerDelegate>
 
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+
+    
+}
+
+- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> *)items
+{
+    
+}
+
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
 
@@ -316,6 +328,7 @@
 
 - (void)setMinimumPressDuration:(CFTimeInterval)minimumPressDuration
 {
+     minimumPressDuration = minimumPressDuration>=1?minimumPressDuration:1;
     _minimumPressDuration = minimumPressDuration;
     self.ds_tabBar.minimumPressDuration = minimumPressDuration;
 }
@@ -331,6 +344,8 @@
         self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y+(height -self.tabBarHeight), self.tabBar.frame.size.width, self.tabBarHeight);
     }
 }
+
+
 
 @end
 

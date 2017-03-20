@@ -20,6 +20,15 @@
     [self.view addSubview:self.label];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+    self.tabBarItem.badgeValue  = @"3";
+
+}
+
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];

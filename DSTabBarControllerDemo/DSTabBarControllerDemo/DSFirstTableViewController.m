@@ -22,18 +22,17 @@ static NSString *identifier = @"cell";
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
-    self.title  =@"首页";
+    
+     
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
     [super viewWillAppear:animated];
-    
-    self.navigationController.tabBarItem.badgeValue  = @"3";
-
+ 
 }
-
 
 #pragma mark - Table view data source
 

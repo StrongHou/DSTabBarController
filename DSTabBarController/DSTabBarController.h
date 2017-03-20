@@ -76,8 +76,7 @@ NS_INLINE void ds_exception(NSString *reason)
 
 @property (nonatomic, assign) CGFloat tabBarHeight;
 
-
-@property (nonatomic, assign) CFTimeInterval minimumPressDuration;// Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
+@property (nonatomic, assign) CFTimeInterval minimumPressDuration;// Default is 1.2. Time in seconds the fingers must be held down for the gesture to be recognized >1
 
 
 @property (nonatomic, assign, getter=isAutoPublishButtonLayout) BOOL autoPublishButtonLayout;  //Default is NO.
@@ -85,6 +84,8 @@ NS_INLINE void ds_exception(NSString *reason)
 @property (nullable,nonatomic, assign) id <DSTabBarControllerDelegate> ds_delegate;
 
 @property (nullable,nonatomic, assign) id <DSTabBarControllerDataSource> ds_dataSource;
+
+
 
 
 - (UIViewController *)viewControllerWithItem:(UITabBarItem *)item;
