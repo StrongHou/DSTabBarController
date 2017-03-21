@@ -189,6 +189,12 @@
     }
 }
 
+- (void)clearLastDataSource
+{
+    _publishButton = nil;
+    _publishViewController = nil;
+}
+
 #pragma mark - <DSTabBarDelegate>
 
 - (void)tabBar:(UITabBar *)tabBar didLongPressItem:(UITabBarItem *)item
@@ -321,6 +327,13 @@
         
         self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y+(height -self.tabBarHeight), self.tabBar.frame.size.width, self.tabBarHeight);
     }
+}
+
+- (void)setDs_dataSource:(id<DSTabBarControllerDataSource>)ds_dataSource
+{
+    if(_ds_dataSource == ds_dataSource) return;
+    [self clearLastDataSource];
+    _ds_dataSource = ds_dataSource;
 }
 
 @end
