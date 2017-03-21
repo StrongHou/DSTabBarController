@@ -76,7 +76,7 @@ NS_INLINE void ds_exception(NSString *reason)
 
 @property (nonatomic, assign) CGFloat tabBarHeight;
 
-@property (nonatomic, assign) CFTimeInterval minimumPressDuration;// Default is 1.2. Time in seconds the fingers must be held down for the gesture to be recognized >1
+@property (nonatomic, assign) CFTimeInterval minimumPressDuration;// Default is 0.8. Time in seconds the fingers must be held down for the gesture to be recognized 
 
 
 @property (nonatomic, assign, getter=isAutoPublishButtonLayout) BOOL autoPublishButtonLayout;  //Default is NO.

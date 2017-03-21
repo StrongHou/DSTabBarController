@@ -48,13 +48,6 @@
     [self setUpTabBar];
 }
 
-- (void)viewWillLayoutSubviews {
-    
-    [super viewWillLayoutSubviews];
-    [self.tabBar layoutSubviews];
-
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -172,7 +165,7 @@
     //KVC
     [self setValue:[[DSTabBar alloc] init] forKey:NSStringFromSelector(@selector(tabBar))];
     self.ds_tabBar.ds_delegate = self;
-    self.minimumPressDuration = 1.2;
+    self.minimumPressDuration = 0.8f;
     self.delegate = self;
 }
 
@@ -180,6 +173,7 @@
 - (void)setPublishButtonInfo
 {
     if(!self.publishButton) return;
+   
     [self.ds_tabBar setPublishButton:self.publishButton index:self.publishBtnIndex viewController:self.publishViewController];
 }
 
@@ -253,18 +247,6 @@
 
 #pragma mark -  <UITabBarControllerDelegate>
 
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
-
-    
-}
-
-- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> *)items
-{
-    
-}
-
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
 
@@ -280,7 +262,6 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    
     
     self.publishButton.selected = NO;
     if([self.ds_delegate respondsToSelector:@selector(tabBarController:didClickTabBarButton:viewController:)]){
@@ -324,11 +305,8 @@
 }
 
 
-
-
 - (void)setMinimumPressDuration:(CFTimeInterval)minimumPressDuration
 {
-     minimumPressDuration = minimumPressDuration>=1?minimumPressDuration:1;
     _minimumPressDuration = minimumPressDuration;
     self.ds_tabBar.minimumPressDuration = minimumPressDuration;
 }
@@ -344,8 +322,6 @@
         self.tabBar.frame = CGRectMake(self.tabBar.frame.origin.x, self.tabBar.frame.origin.y+(height -self.tabBarHeight), self.tabBar.frame.size.width, self.tabBarHeight);
     }
 }
-
-
 
 @end
 
