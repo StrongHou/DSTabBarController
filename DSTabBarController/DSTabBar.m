@@ -34,7 +34,6 @@ static const NSTimeInterval timerStep_ = 0.1f;
     self = [super init];
     if (self) {
         self.minimumPressDuration = 0.8f;
-         self.shadowImage = nil;
     }
     return self;
 }
