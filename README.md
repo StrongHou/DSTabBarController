@@ -213,4 +213,3 @@ An easy-to-use TabBarController components
 ````
 
 支持Pod：**Pod  'DSTabBarController'**
-Demo地址：[DSTabBarController](https://github.com/StrongHou/DSTabBarController)
