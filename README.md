@@ -78,7 +78,9 @@ An easy-to-use TabBarController components
 }
 ````
 上面代码是当选项卡点击后，给选项卡添加了一个帧动画。效果如下：
+
 ![2.gif](http://upload-images.jianshu.io/upload_images/3101212-fc92212fd36c7f52.gif?imageMogr2/auto-orient/strip)
+
 当需要监听选项卡长按时，需要实现下面的代理方法
 ````objc
 //tabBarController默认是不能响应长按事件的
@@ -106,6 +108,7 @@ An easy-to-use TabBarController components
 }
 ````
 设置后的效果如下：
+
 ![3.gif](http://upload-images.jianshu.io/upload_images/3101212-d05c886042e36e4f.gif?imageMogr2/auto-orient/strip)
 
 你还可以设置长按的时间
@@ -115,6 +118,7 @@ An easy-to-use TabBarController components
 
 ###特殊的TabBar
 像是闲鱼客户端的那种TabBar，TarBar的中间有个特殊的按钮，大致效果如下：
+
 ![4.gif](http://upload-images.jianshu.io/upload_images/3101212-566c0e4a86bebc01.gif?imageMogr2/auto-orient/strip)
 
 这就需要数据源方法了，首先设置数据源
