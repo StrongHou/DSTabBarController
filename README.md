@@ -4,7 +4,7 @@ An easy-to-use TabBarController components
 一个*tabBarController*（导航控制器）组件。简单易用，功能强大。轻量、低耦合以及良好的扩展性。
 
 
-####普通的TabBar
+#### 普通的TabBar
 如果你只想构建一个很普通的*tabbarController*，像这种：
 
 
@@ -116,7 +116,7 @@ An easy-to-use TabBarController components
 @property (nonatomic, assign) CFTimeInterval minimumPressDuration;// Default is 0.8. Time in seconds the fingers must be held down for the gesture to be recognized 
 ````
 
-###特殊的TabBar
+### 特殊的TabBar
 像是闲鱼客户端的那种TabBar，TarBar的中间有个特殊的按钮，大致效果如下：
 
 ![4.gif](http://upload-images.jianshu.io/upload_images/3101212-566c0e4a86bebc01.gif?imageMogr2/auto-orient/strip)
@@ -159,7 +159,7 @@ An easy-to-use TabBarController components
     [tabBarController.selectedViewController presentViewController:vc animated:YES completion:nil];
 }
 ````
-#####关于特殊按钮的位置
+##### 关于特殊按钮的位置
 若需要指定特殊按钮的位置，实现以下数据源方法
 ````objc
 - (NSUInteger)tabBarControllerPublishButtonIndex:(DSTabBarController *)tabBarController
